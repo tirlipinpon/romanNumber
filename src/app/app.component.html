@@ -1,3 +1,13 @@
-<h1>
-  {{title}}
-</h1>
+<form novalidate [formGroup]="registerForm" >
+  <input type="text" formControlName="roman"  />
+  <p *ngIf="registerForm.controls.roman.errors?.required && registerForm.dirty ">field is required!</p>
+  <p *ngIf="registerForm.controls.roman.errors?.forbidden && registerForm.dirty "> {{ registerForm.controls['roman'].errors['forbidden'].responseError }}</p>
+  <BR>
+  <input type="submit" value="Submit" [disabled]="!registerForm.valid" (click)="convert(registerForm.value.roman)"/>
+</form>
+{{ result }}
+
+
+
+
+
