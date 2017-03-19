@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { forbiddenNameValidator } from '../commons/validate-roman';
+import { forbiddenValueValidator } from '../commons/validate-roman';
 
 
 @Component({
@@ -17,7 +17,7 @@ export class AppComponent {
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
-      roman: ['',[Validators.required, forbiddenNameValidator()]]
+      roman: ['',[Validators.required, forbiddenValueValidator()]]
     });
     this.registerForm.valueChanges.subscribe(value => {
       // console.log(this.registerForm.controls["roman"].errors["forbiddenName2"].name);

@@ -1,3 +1,5 @@
+Add a  latin or a roman (in uppercase) number.
+
 <form novalidate [formGroup]="registerForm" >
   <input type="text" formControlName="roman"  />
   <p *ngIf="registerForm.controls.roman.errors?.required && registerForm.dirty ">field is required!</p>
